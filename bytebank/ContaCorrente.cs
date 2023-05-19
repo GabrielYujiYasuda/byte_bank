@@ -25,7 +25,9 @@ namespace bytebank
 
         public void Depositar(double deposito)
         {
-            this.saldo += deposito;
+            //both work
+            //this.saldo += deposito;
+            saldo += deposito;
         }
 
         public bool Sacar(double valor)
