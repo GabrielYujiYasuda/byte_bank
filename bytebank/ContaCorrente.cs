@@ -10,12 +10,12 @@ namespace bytebank
     {
         public int numero_agencia;
         public string conta;
-        public string titular;
         public double saldo;
+        public Cliente titular;
 
         public ContaCorrente(){} //Empty constructor
 
-        public ContaCorrente(int numero_agencia, string conta, string titular, double saldo)
+        public ContaCorrente(int numero_agencia, string conta, Cliente titular, double saldo)
         {
             this.numero_agencia = numero_agencia;
             this.conta = conta;
