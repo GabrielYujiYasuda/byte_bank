@@ -1,4 +1,5 @@
-﻿using bytebank;
+﻿using bytebank.Contas;
+using bytebank.Titular;
 using System.Runtime.CompilerServices;
 
 //ContaCorrente contaGabriel = new ContaCorrente();
@@ -33,20 +34,33 @@ using System.Runtime.CompilerServices;
 //Console.WriteLine("Saldo Gabriel: {0:0.0}", contaGabriel.saldo);
 //Console.WriteLine("Saldo Laura: {0:0.0}", contaLaura.saldo);
 
-Cliente cliente = new Cliente();
-cliente.nome = "Andre Silva";
-cliente.CPF = "1234566789";
-cliente.profissao = "Analista";
+//Cliente cliente = new Cliente();
+//cliente.nome = "Andre Silva";
+//cliente.CPF = "1234566789";
+//cliente.profissao = "Analista";
 
-ContaCorrente contaAndre = new ContaCorrente();
-contaAndre.titular = cliente;
-contaAndre.conta = "1234-B";
-contaAndre.numero_agencia = 15;
-contaAndre.saldo = 100;
+//ContaCorrente contaAndre = new ContaCorrente();
+//contaAndre.titular = cliente;
+//contaAndre.conta = "1234-B";
+//contaAndre.numero_agencia = 15;
+//contaAndre.saldo = 100;
 
-Console.WriteLine("Titular: " + contaAndre.titular.nome);
-Console.WriteLine("CPF: " + contaAndre.titular.CPF);
-Console.WriteLine("Profissao: " + contaAndre.titular.profissao);
-Console.WriteLine("Conta: " + contaAndre.conta);
-Console.WriteLine("Numero Agencia: " + contaAndre.numero_agencia);
-Console.WriteLine("Saldo: " + contaAndre.saldo);
+//Console.WriteLine("Titular: " + contaAndre.titular.nome);
+//Console.WriteLine("CPF: " + contaAndre.titular.CPF);
+//Console.WriteLine("Profissao: " + contaAndre.titular.profissao);
+//Console.WriteLine("Conta: " + contaAndre.conta);
+//Console.WriteLine("Numero Agencia: " + contaAndre.numero_agencia);
+//Console.WriteLine("Saldo: " + contaAndre.saldo);
+
+ContaCorrente conta2 = new ContaCorrente();
+conta2.titular = new Cliente();
+
+conta2.titular.nome = "Jose Miranda";
+conta2.titular.profissao = "Desenvovledor";
+conta2.titular.CPF = "98723412-43";
+conta2.numero_agencia = 123;
+conta2.conta = "456-X";
+conta2.saldo = 100;
+
+Console.WriteLine("Nome do titular: {0}", conta2.titular.nome);
+Console.WriteLine("Saldo: {0:0.0}", conta2.saldo);
