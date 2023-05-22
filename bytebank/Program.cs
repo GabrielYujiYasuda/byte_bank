@@ -52,15 +52,19 @@ using System.Runtime.CompilerServices;
 //Console.WriteLine("Numero Agencia: " + contaAndre.numero_agencia);
 //Console.WriteLine("Saldo: " + contaAndre.saldo);
 
-ContaCorrente conta2 = new ContaCorrente();
-conta2.titular = new Cliente();
+//ContaCorrente conta2 = new ContaCorrente();
+//conta2.titular = new Cliente();
 
-conta2.titular.nome = "Jose Miranda";
-conta2.titular.profissao = "Desenvovledor";
-conta2.titular.CPF = "98723412-43";
-conta2.numero_agencia = 123;
-conta2.conta = "456-X";
-conta2.saldo = 100;
+//conta2.titular.nome = "Jose Miranda";
+//conta2.titular.profissao = "Desenvovledor";
+//conta2.titular.CPF = "98723412-43";
+//conta2.numero_agencia = 123;
+//conta2.conta = "456-X";
+//conta2.saldo = 100;
 
-Console.WriteLine("Nome do titular: {0}", conta2.titular.nome);
-Console.WriteLine("Saldo: {0:0.0}", conta2.saldo);
+//Console.WriteLine("Nome do titular: {0}", conta2.titular.nome);
+//Console.WriteLine("Saldo: {0:0.0}", conta2.saldo);
+
+ContaCorrente conta3 = new ContaCorrente();
+conta3.DefinirSaldo(1256);
+Console.WriteLine(conta3.Saldo);

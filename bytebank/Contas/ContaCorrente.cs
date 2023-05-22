@@ -9,33 +9,44 @@ namespace bytebank.Contas
 {
     public class ContaCorrente
     {
-        public int numero_agencia;
-        public string conta;
-        public double saldo;
-        public Cliente titular;
+        private int numeroAgencia;  //{ get; set; }
+        public int NumeroAgencia
+        {
+            get { return this.numeroAgencia; }
+            set 
+            {
+                if (value > 0)
+                {
+                    this.numeroAgencia = value;
+                }
+            }
+        }
+        public string Conta { get; set; }
+        public double Saldo { get; set; }
+        private Cliente titular;
 
         public ContaCorrente() { } //Empty constructor
 
         public ContaCorrente(int numero_agencia, string conta, Cliente titular, double saldo)
         {
-            this.numero_agencia = numero_agencia;
-            this.conta = conta;
+            NumeroAgencia = numero_agencia;
+            this.Conta = conta;
             this.titular = titular;
-            this.saldo = saldo;
+            this.Saldo = saldo;
         }
 
         public void Depositar(double deposito)
         {
             //both work
             //this.saldo += deposito;
-            saldo += deposito;
+            Saldo += deposito;
         }
 
         public bool Sacar(double valor)
         {
-            if (valor <= saldo)
+            if (valor <= Saldo)
             {
-                saldo -= valor;
+                Saldo -= valor;
                 return true;
             }
 
@@ -44,11 +55,21 @@ namespace bytebank.Contas
 
         public void Transferir(ContaCorrente ccRecebe, double valor)
         {
-            if (valor <= saldo)
+            if (valor <= Saldo)
             {
-                saldo -= valor;
-                ccRecebe.saldo += valor;
+                Saldo -= valor;
+                ccRecebe.Saldo += valor;
             }
+        }
+
+        public void DefinirSaldo(double valor)
+        {
+            if (valor < 0)
+            {
+                return;
+            }
+
+            this.Saldo = valor;
         }
     }
 }
