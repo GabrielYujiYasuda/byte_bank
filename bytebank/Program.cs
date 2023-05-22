@@ -65,6 +65,11 @@ using System.Runtime.CompilerServices;
 //Console.WriteLine("Nome do titular: {0}", conta2.titular.nome);
 //Console.WriteLine("Saldo: {0:0.0}", conta2.saldo);
 
-ContaCorrente conta3 = new ContaCorrente();
-conta3.DefinirSaldo(1256);
-Console.WriteLine(conta3.Saldo);
+ContaCorrente conta1 = new ContaCorrente(1, "111-X");
+ContaCorrente conta2 = new ContaCorrente(2, "222-X");
+ContaCorrente conta3 = new ContaCorrente(3, "333-X");
+//conta3.DefinirSaldo(1256);
+//Console.WriteLine(conta3.Saldo);
+
+Console.WriteLine(conta3.Conta);
+Console.WriteLine(conta3.NumeroAgencia);
