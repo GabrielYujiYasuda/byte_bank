@@ -23,7 +23,7 @@ namespace bytebank.Contas
         }
         public string Conta { get; set; }
         public double Saldo { get; set; }
-        private Cliente titular;
+        public Cliente Titular { get; set; }
 
         public ContaCorrente() { } //Empty constructor
 
@@ -31,7 +31,7 @@ namespace bytebank.Contas
         {
             NumeroAgencia = numero_agencia;
             this.Conta = conta;
-            this.titular = titular;
+            this.Titular = titular;
             this.Saldo = saldo;
         }
 
