@@ -71,5 +71,6 @@ ContaCorrente conta3 = new ContaCorrente(3, "333-X");
 //conta3.DefinirSaldo(1256);
 //Console.WriteLine(conta3.Saldo);
 
-Console.WriteLine(conta3.Conta);
-Console.WriteLine(conta3.NumeroAgencia);
+ContaCorrente contasCriadas = new ContaCorrente();
+
+Console.WriteLine("Total de contas criadas: {0}", ContaCorrente.TotalContasCriadas);
