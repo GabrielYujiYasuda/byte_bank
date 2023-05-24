@@ -24,7 +24,7 @@ namespace bytebank.Contas
         public string Conta { get; set; }
         public double Saldo { get; set; }
         public Cliente Titular { get; set; }
-        public static int TotalContasCriadas { get; set; }
+        public static int TotalContasCriadas { get; private set; }
 
         public ContaCorrente()
         {
