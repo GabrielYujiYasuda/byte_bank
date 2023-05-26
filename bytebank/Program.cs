@@ -1,7 +1,10 @@
 ﻿using bytebank.Contas;
+using bytebank.Funcionarios;
 using bytebank.Titular;
+using bytebank.Utilitario;
 using System.Runtime.CompilerServices;
 
+#region
 //ContaCorrente contaGabriel = new ContaCorrente();
 //contaGabriel.numero_agencia = 123;
 //contaGabriel.conta = "1919-Y";
@@ -65,12 +68,34 @@ using System.Runtime.CompilerServices;
 //Console.WriteLine("Nome do titular: {0}", conta2.titular.nome);
 //Console.WriteLine("Saldo: {0:0.0}", conta2.saldo);
 
-ContaCorrente conta1 = new ContaCorrente(1, "111-X");
-ContaCorrente conta2 = new ContaCorrente(2, "222-X");
-ContaCorrente conta3 = new ContaCorrente(3, "333-X");
+//ContaCorrente conta1 = new ContaCorrente(1, "111-X");
+//ContaCorrente conta2 = new ContaCorrente(2, "222-X");
+//ContaCorrente conta3 = new ContaCorrente(3, "333-X");
 //conta3.DefinirSaldo(1256);
 //Console.WriteLine(conta3.Saldo);
 
-ContaCorrente contasCriadas = new ContaCorrente();
+//ContaCorrente contasCriadas = new ContaCorrente();
 
-Console.WriteLine("Total de contas criadas: {0}", ContaCorrente.TotalContasCriadas);
+//Console.WriteLine("Total de contas criadas: {0}", ContaCorrente.TotalContasCriadas);
+#endregion
+//Funcionario gabriel = new Funcionario("123123123", 1000);
+//gabriel.Nome = "Gabriel Yuji";
+//Console.WriteLine("GABRIEL");
+//Console.WriteLine("Salário: {0:0.0}", gabriel.Salario);
+//Console.WriteLine("Bonificação: {0:0.0}", gabriel.Bonificacao());
+
+Diretor diretor = new Diretor("123123123");
+diretor.Nome = "Diretor";
+Console.WriteLine("\nDIRETOR");
+Console.WriteLine("Salário: {0:0.0}", diretor.Salario);
+Console.WriteLine("Bonificação: {0:0.0}", diretor.Bonificacao());
+
+GerenciadorBonificacao gerenciador = new GerenciadorBonificacao();
+//gerenciador.Registrar(gabriel);
+gerenciador.Registrar(diretor);
+
+//gabriel.AumentarSalario();
+//Console.WriteLine("Novo salario: " + gabriel.Salario);
+
+Console.WriteLine("Total: " + gerenciador.TotalBonificacao);
+Console.WriteLine(Funcionario.TotalFuncionarios);
