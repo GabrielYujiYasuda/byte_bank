@@ -21,7 +21,7 @@ namespace bytebank.Funcionarios
 
         public override void AumentarSalario()
         {
-            this.Salario = this.Salario + (this.Salario * 0.15);
+            this.Salario = this.Salario + (this.Salario * 1.15);
         }
     }
 }
