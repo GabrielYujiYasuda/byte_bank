@@ -10,7 +10,6 @@ namespace bytebank.Funcionarios
     {
         public GerenteContas(string cpf, double salario): base(cpf, 5000)
         {
-            
         }
 
         public override void AumentarSalario()
