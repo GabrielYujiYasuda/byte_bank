@@ -10,8 +10,16 @@ idades[1] = 13;
 idades[2] = 56;
 idades[3] = 22;
 
-TestArrayInt(idades);
-TestFindWord();
+Array amostra = Array.CreateInstance(typeof(double), 5);
+amostra.SetValue(5.9, 0);
+amostra.SetValue(1.8, 1);
+amostra.SetValue(7.1, 2);
+amostra.SetValue(10, 3);
+amostra.SetValue(6.9, 4);
+
+//TestArrayInt(idades);
+//TestFindWord();
+TestMediana(amostra);
 
 void TestArrayInt(int[] array)
 {
@@ -26,7 +34,6 @@ void TestArrayInt(int[] array)
 
     Console.Write($"A media do array: {media}");
 }
-
 void TestFindWord()
 {
     string[] arrayWords = new string [5];
@@ -52,4 +59,25 @@ void TestFindWord()
             break;
         }
     }
+}
+
+void TestMediana(Array array) {
+
+    if ((array == null) || (array.Length == 0))
+    {
+        Console.WriteLine("Empty or null array.");
+    }
+
+    double[] ordered = (double[])array.Clone();
+    Array.Sort(ordered);
+
+    foreach (double x in ordered) Console.WriteLine(x);
+
+    int tamanho = ordered.Length;
+    int meio = tamanho / 2;
+    double mediana = (tamanho % 2 != 0) 
+        ? ordered[meio] 
+        : (ordered[meio] + ordered[meio - 1]) / 2;
+
+    Console.WriteLine($"Mediana: {mediana}");
 }
